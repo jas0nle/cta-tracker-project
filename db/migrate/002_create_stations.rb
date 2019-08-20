@@ -1,6 +1,7 @@
 class CreateStations < ActiveRecord::Migration[5.2]
     def change
         create_table :stations do |s|
+            s.integer :stop_id
             s.string :name
             s.string :description
             s.float :latitude

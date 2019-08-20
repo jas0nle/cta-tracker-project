@@ -7,3 +7,7 @@ def get_username
     puts "Please enter your username to get started:"
     gets.chomp
 end
+
+def greet_user(username)
+    puts "Hello, #{username}!"
+end
