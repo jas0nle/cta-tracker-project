@@ -9,3 +9,5 @@ welcome
 name_input = get_username
 new_user = User.find_or_create_by(username: name_input)
 greet_user(name_input)
+
+menu_input = main_menu
