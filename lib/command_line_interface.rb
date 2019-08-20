@@ -1,3 +1,3 @@
 def welcome
-    puts "Welcome to CTA Tracker! "
+    puts "Welcome to CTA Tracker!
 end
