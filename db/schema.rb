@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 6) do
 
   create_table "lines", force: :cascade do |t|
     t.string "long_name"
     t.string "short_name"
-    t.integer "type"
+    t.integer "modality"
   end
 
   create_table "stations", force: :cascade do |t|

@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 def welcome
     puts "Welcome to CTA Tracker!"
 end
@@ -11,3 +13,4 @@ end
 def greet_user(username)
     puts "Hello, #{username}!"
 end
+>>>>>>> origin/master
