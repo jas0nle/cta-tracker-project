@@ -18,7 +18,12 @@ when "2"
     if id_or_name == "1"
         uwu = search_id
     elsif id_or_name == "2"
-        bus_or_train
+        owo = train_or_bus
+        if owo == "1"
+            #search only trains
+        elsif owo == "2"
+            #search only buses
+        end
     else
         "Please enter a valid command."
     end
