@@ -56,3 +56,31 @@ def train_or_bus
     puts "2. Bus"
     gets.chomp
 end
+
+def search_by_name(modality)
+    puts "Please enter the name of your station:"
+    name = gets.chomp
+    name_array = name.split(/\W/)
+    allstations = []
+    if modality == "1"
+        allstations = Station.all.select {|station| station.modality == "train" && station.stop_id.to_i > 40000}
+        name_array.each do |name_part|
+            allstations.delete_if {|station| !(/#{name_part}/i.match(station.name))}
+        end
+    else
+        allstations = Station.all.select {|station| station.modality == "bus"}
+        name_array.each do |name_part|
+            allstations.delete_if {|station| !(/#{name_part}/i.match(station.description))}
+        end
+    end
+    puts allstations[0]
+
+    first_five_stations = allstations.first(5)
+    if first_five_stations.first.modality == "train"
+        first_five_stations.each {|station| puts "#{station.stop_id}. #{station.name}"}
+    else
+        first_five_stations.each {|station| puts "#{station.stop_id}. #{station.name} - #{station.description}"}
+    end
+
+        
+end
