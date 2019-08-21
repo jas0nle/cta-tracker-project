@@ -37,3 +37,17 @@ def get_saved_list(user)
     puts "b. Quit"
     gets.chomp
 end
+
+def search_id_or_name
+    puts "Would you like to search by:"
+    puts "1. ID"
+    puts "2. Name"
+    gets.chomp
+end
+
+def search_id
+    puts "Enter the ID of the station. This ID is visible on the placard of the bus stop."
+    id = gets.chomp
+end
+
+
