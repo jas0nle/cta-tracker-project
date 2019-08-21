@@ -50,4 +50,3 @@ def search_id
     id = gets.chomp
 end
 
-
