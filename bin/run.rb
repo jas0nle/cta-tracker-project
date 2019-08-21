@@ -36,4 +36,6 @@ require_relative "../app/models/station.rb"
 #     main_menu
 # end
 
-search_by_name("1")
+station_page(5676)
+
+welcome
