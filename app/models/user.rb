@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-    has_many :stations, through: :users_stations
+    has_and_belongs_to_many :stations
 end

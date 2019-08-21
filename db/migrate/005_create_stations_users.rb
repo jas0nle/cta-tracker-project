@@ -1,0 +1,8 @@
+class CreateStationsUsers < ActiveRecord::Migration[5.2]
+    def change
+        create_table :stations_users do |u|
+            u.integer :station_id
+            u.integer :user_id
+        end
+    end
+end

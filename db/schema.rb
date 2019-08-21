@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 6) do
     t.integer "line_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
+  create_table "stations_users", force: :cascade do |t|
+    t.integer "station_id"
+    t.integer "user_id"
   end
 
-  create_table "users_stations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "station_id"
+  create_table "users", force: :cascade do |t|
+    t.string "username"
   end
 
 end
