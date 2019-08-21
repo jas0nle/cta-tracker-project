@@ -6,8 +6,20 @@ require_relative "../app/models/line.rb"
 require_relative "../app/models/station.rb"
 
 welcome
-name_input = get_username
-user = User.find_or_create_by(username: name_input)
-greet_user(name_input)
+user = get_username
+greet_user(user.username)
 
 menu_input = main_menu
+case menu_input
+when "1"
+    get_saved_list(user)
+when "2"
+    #search_id_or_name
+when "3"
+    #back
+when "4"
+    #quit
+else
+    puts "Please enter a valid command"
+    main_menu
+end
