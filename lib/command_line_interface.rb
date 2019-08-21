@@ -50,3 +50,9 @@ def search_id
     id = gets.chomp
 end
 
+def train_or_bus
+    puts "Are you looking for a train station or bus stop?"
+    puts "1. Train"
+    puts "2. Bus"
+    gets.chomp
+end
