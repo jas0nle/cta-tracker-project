@@ -39,12 +39,9 @@ def greet_user(username)
 end
 
 def main_menu
-    puts "Please select one of the options below:"
-    puts "1. See your saved stations"
-    puts "2. Search for a station"
-    puts "3. Back"
-    puts "4. Quit"
-    gets.chomp
+    puts "To see your saved stations, type 'favorites'."
+    puts "To search for a station, type 'search'."
+    puts "To quit, press 'quit'."
 end
 
 def get_saved_list(user)
@@ -55,14 +52,12 @@ def get_saved_list(user)
     puts "Please select a station, or select an option below:"
     puts "a. Back"
     puts "b. Quit"
-    gets.chomp
 end
 
 def search_id_or_name
     puts "Would you like to search by:"
     puts "1. ID"
     puts "2. Name"
-    gets.chomp
 end
 
 def search_id
@@ -72,9 +67,8 @@ end
 
 def train_or_bus
     puts "Are you looking for a train station or bus stop?"
-    puts "1. Train"
-    puts "2. Bus"
-    gets.chomp
+    puts "Train"
+    puts "Bus"
 end
 
 def search_by_name(modality)
@@ -97,10 +91,14 @@ def search_by_name(modality)
 
     first_five_stations = allstations.first(5)
     if first_five_stations.first.modality == "train"
+        puts "Choose the ID of the station you want:"
         first_five_stations.each {|station| puts "#{station.stop_id}. #{station.name}"}
     else
+        puts "Choose the ID of the station you want:"
         first_five_stations.each {|station| puts "#{station.stop_id}. #{station.name} - #{station.description}"}
     end
+    
+    id = gets.chomp
 
         
 end
