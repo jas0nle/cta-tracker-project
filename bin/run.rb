@@ -5,9 +5,36 @@ require_relative "../app/models/user.rb"
 require_relative "../app/models/line.rb"
 require_relative "../app/models/station.rb"
 
-# welcome
-# user = get_username
-# greet_user(user.username)
+welcome
+user = get_username
+greet_user(user.username)
+id = ""
+input = "main menu"
+last_input = []
+while input != "quit"
+    case input
+    when "main menu"
+        main_menu
+    when "favorites"
+        get_saved_list(user)
+    when "search"
+        search_id_or_name
+    when "id"
+        id = search_id
+        station_page(id)
+    when "name"
+        train_or_bus
+    when "train"
+        id = search_by_name("1")
+        station_page(id)
+    when "bus"
+        id = search_by_name("2")
+        station_page(id)
+    end
+    last_input << input
+    input = gets.chomp.downcase
+end
+puts "Thank you for riding the CTA and for using our CTA tracker app."
 
 # menu_input = main_menu
 # case menu_input
@@ -35,7 +62,3 @@ require_relative "../app/models/station.rb"
 #     puts "Please enter a valid command."
 #     main_menu
 # end
-
-station_page(5676)
-
-welcome
