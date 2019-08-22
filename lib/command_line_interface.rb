@@ -41,7 +41,8 @@ end
 def main_menu
     puts "To see your saved stations, type 'favorites'."
     puts "To search for a station, type 'search'."
-    puts "To quit, press 'quit'."
+    puts "To go back to the main menu, type 'main menu'."
+    puts "To quit, type 'quit'."
 end
 
 def get_saved_list(user)
@@ -49,15 +50,13 @@ def get_saved_list(user)
     user.stations.each_with_index do |s, i|
         puts "#{i + 1}. #{s}"
     end
-    puts "Please select a station, or select an option below:"
-    puts "a. Back"
-    puts "b. Quit"
+    puts "Please select a station, or use an option below:"
+    menu_quit
 end
 
 def search_id_or_name
-    puts "Would you like to search by:"
-    puts "1. ID"
-    puts "2. Name"
+    puts "To search by ID, type 'id'."
+    puts "To search by name, type 'name'."
 end
 
 def search_id
@@ -102,3 +101,11 @@ def search_by_name(modality)
 
         
 end
+
+def menu_quit
+    puts "To go back to the main menu, type 'main menu'."
+    puts "To quit, type 'quit'."
+end
+
+
+
