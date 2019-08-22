@@ -11,6 +11,7 @@ greet_user(user.username)
 id = ""
 input = "main menu"
 last_input = []
+station = ""
 while input != "quit"
     case input
     when "main menu"
@@ -21,15 +22,19 @@ while input != "quit"
         search_id_or_name
     when "id"
         id = search_id
-        station_page(id)
+        station = station_page(id)
     when "name"
         train_or_bus
     when "train"
         id = search_by_name("1")
-        station_page(id)
+        station = station_page(id)
     when "bus"
         id = search_by_name("2")
-        station_page(id)
+        station = station_page(id)
+    when "save"
+        user.add_to_favorites(station)
+    when "remove"
+        user.remove_from_favorites(station)
     end
     last_input << input
     input = gets.chomp.downcase

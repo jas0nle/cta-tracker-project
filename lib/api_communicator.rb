@@ -5,6 +5,7 @@ require_relative "../app/models/user.rb"
 require_relative "../app/models/line.rb"
 require_relative "../app/models/station.rb"
 require_relative "../config/environment.rb"
+require_relative "../lib/command_line_interface.rb"
 
 def station_page(id)
     station = Station.find_by(stop_id: id)
@@ -20,5 +21,5 @@ def station_page(id)
         parsed = JSON.parse(response)
         parsed["bustime-response"]["prd"].each {|pred| puts "#{pred["rt"]} #{pred["rtdir"]} to #{pred["des"]} - arriving at #{pred["prdtm"].split(" ")[1]}"}
     end
-    
+    station
 end
