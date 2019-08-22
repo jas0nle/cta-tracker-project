@@ -30,6 +30,30 @@ def get_username
     puts "We provide a search function for all of Chicago's train stations and bus stops. We also keep track of your favorite stations!"
     puts "Please enter your username to get started:"
     user_name = gets.chomp
+    while /\w{3,}/.match(user_name) == nil
+        if user_name.length < 3
+            puts "That username is too short. A username must be at least three alphanumeric characters."
+        else
+            puts "That username is invalid. A username must be at least three alphanumeric characters."
+        end
+        puts "Please enter your username:"
+        user_name = gets.chomp
+    end
+    User.find_or_create_by(username: user_name)
+end
+
+def change_username
+    puts "Please enter your new username:"
+    user_name = gets.chomp
+    while /\w{3,}/.match(user_name) == nil
+        if user_name.length < 3
+            puts "That username is too short. A username must be at least three alphanumeric characters."
+        else
+            puts "That username is invalid. A username must be at least three alphanumeric characters."
+        end
+        puts "Please enter your username:"
+        user_name = gets.chomp
+    end
     User.find_or_create_by(username: user_name)
 end
 
@@ -41,6 +65,7 @@ def main_menu
     puts "To see your saved stations, type 'favorites'."
     puts "To search for a station, type 'search'."
     puts "To go back to the main menu, type 'main menu'."
+    puts "To change username, type 'change username'."
     puts "To quit, type 'quit'."
 end
 

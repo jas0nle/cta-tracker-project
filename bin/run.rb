@@ -17,6 +17,10 @@ while input != "quit"
     case input
     when ""
         main_menu
+    when "change username"
+        user = change_username
+        greet_user(user.username)
+        main_menu
     when "main menu"
         main_menu
     when "favorites"
