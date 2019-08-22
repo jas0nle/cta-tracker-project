@@ -1,5 +1,4 @@
 require_relative "../app/models/user.rb"
-require_relative "../app/models/line.rb"
 require_relative "../app/models/station.rb"
 require_relative "../config/environment.rb"
 
@@ -47,10 +46,15 @@ end
 
 def get_saved_list(user)
     puts "Here are your saved stations:"
-    user.stations.each_with_index do |s, i|
-        puts "#{i + 1}. #{s}"
+    user.stations.each do |s|
+        if s.modality == "train"
+          puts "#{s.stop_id}. #{s.name}"
+        else
+          puts "#{s.stop_id}. #{s.description}"
+        end
     end
-    puts "Please select a station, or use an option below:"
+    puts "Please select a station by typing its ID, or use an option below:"
+    puts "To search for a station, type 'search'."
     menu_quit
 end
 
@@ -61,13 +65,11 @@ end
 
 def search_id
     puts "Enter the ID of the station. This ID is visible on the placard of the bus stop."
-    id = gets.chomp
 end
 
 def train_or_bus
-    puts "Are you looking for a train station or bus stop?"
-    puts "Train"
-    puts "Bus"
+    puts "To search for a train station, type 'train'."
+    puts "To search for a bus stop, type 'bus'."
 end
 
 def search_by_name(modality)
@@ -86,7 +88,6 @@ def search_by_name(modality)
             allstations.delete_if {|station| !(/#{name_part}/i.match(station.description))}
         end
     end
-    puts allstations[0]
 
     first_five_stations = allstations.first(5)
     if first_five_stations.first.modality == "train"
@@ -97,9 +98,12 @@ def search_by_name(modality)
         first_five_stations.each {|station| puts "#{station.stop_id}. #{station.name} - #{station.description}"}
     end
     
-    id = gets.chomp
 
         
+end
+
+def valid_command
+    puts "Please enter a valid command."
 end
 
 def menu_quit
