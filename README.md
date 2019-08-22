@@ -8,7 +8,7 @@ The user first logs in by entering their username. This will take them to the ma
 CTA Tracker provides an easy navigation flow for the user through its use of commands.
 
 ## List of commands
-These commands can be used at any time while using CTA Tracker
+Below are the commands you can type into the console while using CTA Tracker. They can be used at any time to navigate throughout the application.
 
 ### main menu
 Takes the user to the main menu.
@@ -44,5 +44,6 @@ A user can input a valid ID number to directly search for that station.
 Exits the program.
 
 ## Credits
-Anais Ahmed and Jason Le created this program as our first project at Flatiron School's immersive Software Engineering class in Austin. Credits go to Chicago Transit Authority for their API and GTFS data, without which this program would not function. 
+Anais Ahmed and Jason Le created this program as their first project at Flatiron School's immersive Software Engineering class in Austin. 
+Credits to Chicago Transit Authority for their API and GTFS data, without which this program would not function. 
 Credits also to Connor De La Cruz for the text-based Chicago skyline image. 
