@@ -22,7 +22,7 @@ def welcome
     puts "█████▌████▌ ▐███████▌ ▐████▌ ████▐████"
     puts "██████████████████████████████████████"
     puts "██████████████████████████████████████"
-    puts "(credits to Connor de la Cruz for the skyline) \n \n \n"
+    puts "\n \n \n"
     puts "Welcome to CTA Tracker!"
 end
 
