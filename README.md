@@ -4,7 +4,7 @@
 CTA Tracker is a CLI Application that lets the user search for any train or bus station in Chicago and provides up to five arrival times at that station. It also lets the user save their favorite stations for ease of access.
 
 ## How to use it
-The user first logs in by entering their username. This will take them to the main menu. From here, the user can either look at their favorite stations or they can search for any station by name or id. The user can then save or remove that station from their favorites.
+The user first logs in by entering their username. If the user is entering a username for the first time, it will create a new username and add it to the database. This username should have atleast 3 alphanumerical characters. CTA Tracker allows the user to change their username if they wish to do so. The user will then be taken to the main menu. From here, the user can either look at their favorite stations or they can search for any station by name or id. The user can then save or remove that station from their favorites.
 CTA Tracker provides an easy navigation flow for the user through its use of commands.
 
 ## List of commands
@@ -39,6 +39,9 @@ Removes the current station from the user's favorites.
 
 ### (ID number)
 A user can input a valid ID number to directly search for that station. 
+
+### change username
+Prompts the user to input a new username that they want to change their current one to. 
 
 ### quit
 Exits the program.
