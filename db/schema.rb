@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 7) do
+ActiveRecord::Schema.define(version: 8) do
 
   create_table "stations", force: :cascade do |t|
     t.integer "stop_id"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 7) do
     t.string "description"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "wheelchair_boarding"
+    t.string "wheelchair_boarding"
   end
 
   create_table "stations_users", force: :cascade do |t|
