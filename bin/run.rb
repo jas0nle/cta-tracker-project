@@ -11,7 +11,6 @@ greet_user(user.username)
 
 id = ""
 input = "main menu"
-last_input = []
 station = ""
 while input != "quit"
     case input
@@ -49,7 +48,6 @@ while input != "quit"
         valid_command
     end
 
-    last_input << input
     input = gets.chomp.downcase
     puts "\n"
 end

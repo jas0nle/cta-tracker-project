@@ -71,6 +71,7 @@ end
 
 def get_saved_list(user)
     puts "Here are your saved stations:"
+    puts "\n"
     user.stations.each do |s|
         if s.modality == "train"
           puts "#{s.stop_id}. #{s.name}"
@@ -78,6 +79,7 @@ def get_saved_list(user)
           puts "#{s.stop_id}. #{s.description}"
         end
     end
+    puts "\n"
     puts "Please select a station by typing its ID, or use an option below:"
     puts "To search for a station, type 'search'."
     menu_quit
